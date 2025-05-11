@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Gallery</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+      }
+
+      .gallery {
+        column-count: 3;
+        column-gap: 10px;
+        padding: 20px;
+      }
+      .gallery img {
+        width: 100%;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        border-radius: 5px;
+      }
+      .gallery img:hover {
+        transform: scale(1.01);
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .overlay img {
+        max-width: 90%;
+        max-height: 80%;
+        z-index: 1001;
+      }
+      .close,
+      .prev,
+      .next {
+        position: absolute;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 1002;
+      }
+      .close {
+        top: 10px;
+        right: 20px;
+      }
+      .prev {
+        left: 20px;
+      }
+      .next {
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-1.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-2.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-3.jpg.jpeg"
+        alt="Travel Image"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-4.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-5.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-6.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-7.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-8.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-9.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-10.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-11.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-12.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-13.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-14.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-15.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-16.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-17.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-18.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-19.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-20.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-21.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-22.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-23.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-24.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-25.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-26.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-27.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+      <img
+        src="img/gallery/best-travels-madurai-kavi-travels-feedback-28.jpg.jpeg"
+        alt="Best Travels in Madurai - Kavi Travels Customer Feedback"
+      />
+    </div>
+
+    <div class="overlay" id="overlay">
+      <span class="close" onclick="closeOverlay()">&times;</span>
+      <span class="prev" onclick="prevImage()">&#10094;</span>
+      <img id="fullImage" src="" alt="Full View" />
+      <span class="next" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+      let currentIndex = 0;
+      const images = document.querySelectorAll(".gallery img");
+      const overlay = document.getElementById("overlay");
+      const fullImage = document.getElementById("fullImage");
+
+      images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+          currentIndex = index;
+          showImage();
+        });
+      });
+
+      function showImage() {
+        fullImage.src = images[currentIndex].src;
+        overlay.style.display = "flex";
+      }
+
+      function closeOverlay() {
+        overlay.style.display = "none";
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+      }
+    </script>
+  </body>
+</html>
