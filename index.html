@@ -80,6 +80,9 @@
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <!-- Choices CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
 
     <!-- Icon Font Stylesheet -->
     <link
@@ -119,6 +122,31 @@
 
       gtag("config", "G-F0Y4XMT84R");
     </script>
+    <style>
+      .choices__inner {
+      min-height: 45px;
+    }
+   .choices__button {
+  background: none !important;
+  border: none;
+  padding: 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+
+.choices__button svg {
+  stroke: white;
+  width: 18px;
+  height: 18px;
+}
+
+    </style>
   </head>
 
   <body>
@@ -266,6 +294,13 @@
                 Experience luxury travel with Kavi Travels Madurai. Visit for
                 premium solutions!
               </p>
+             
+              <div class="d-flex justify-content-center">
+                <a href="#" target="_blank" class="animated-btn" onclick="closeOfferAndOpenForm(event)">
+                  <span></span><span></span><span></span><span></span>
+                  BOOK NOW
+                </a>
+              </div>
               <div class="position-relative w-75 mx-auto animated slideInDown">
                 <!-- <input
                   class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
@@ -286,20 +321,427 @@
       </div>
     </div>
     <!-- Navbar & Hero End -->
-    <!--Navbar End -->
+    <!--Navbar End -->'
+    
+    
+    <!-- Trigger Button -->
 
+<!-- Popup Overlay -->
+
+
+    
+
+<!-- Modal Popup -->
+<div class="modal fade" id="offerPopup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center" style="border-radius: 12px; overflow: hidden; max-width: 400px; margin: auto; position: relative;">
+
+      <!-- X Close Button -->
+     <button type="button" class="custom-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+
+
+      <!-- Travel Image -->
+      <img src="img/travel.webp" alt="Travel Offer" class="w-100" style="height: 200px; object-fit: cover;" />
+
+      <!-- Content -->
+      <div class="p-4">
+        <h5 class="fw-bold text-dark mb-2">Explore our interactive map</h5>
+        <p class="text-muted mb-3 small">Every journey begins with a single step into the unknown.</p>
+       <!-- Button inside Bootstrap Modal -->
+<button class="btn btn-primary w-100 fw-semibold" onclick="closeOfferAndOpenForm(event)">BOOK NOW</button>
+      </div>  
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+
+
+<!-- Popup Overlay -->
+
+<!-- Popup -->
+<div id="popupForm" class="popup-overlay" style="display: none;">
+  <div class="popup-wrapper">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+  <div class="logo-container">
+    <img src="img/KaviAssets/KaviLogo.png" alt="Logo" class="sidebar-logo" />
+  </div>
+
+  <div class="step-indicator active">
+    <div class="circle">1</div>
+    <div>
+      <strong>STEP</strong><br />HOME
+    </div>
+  </div>
+
+  <div class="step-indicator">
+    <div class="circle">2</div>
+    <div>
+      <strong>STEP</strong><br />MEMBERS
+    </div>
+  </div>
+
+  <div class="step-indicator">
+    <div class="circle">3</div>
+    <div>
+      <strong>STEP</strong><br />OTHER DETAILS
+    </div>
+  </div>
+</div>
+
+
+    <!-- Right Content -->
+  <div class="form-content">
+  <button class="close-btn" onclick="closePopup()">&times;</button>
+
+  <div class="step active">
+    <h2>Get Your Quote</h2>
+    <!-- <p>Please provide your details.</p> -->
+
+    <!-- Two Column Layout Start -->
+    <div class="form-row" style="display: flex; gap: 30px; flex-wrap: wrap;">
+      <!-- Left Column -->
+      <div class="form-col" style="flex: 1; min-width: 280px;">
+        <label>Name <span style="color: red">*</span></label>
+        <input type="text" id="name" placeholder="Name" />
+
+        <label>Phone Number <span style="color: red">*</span></label>
+        <input type="tel" id="phone" placeholder="Mobile Number" oninput="validateContactFields()" />
+        <small id="phoneError" style="color: red; display: none;">Enter a valid 10-digit phone number.</small>
+      </div>
+
+      <!-- Right Column -->
+      <div class="form-col" style="flex: 1; min-width: 280px;">
+        <label>Email <span style="color: red">*</span></label>
+        <input type="email" id="email" placeholder="Gmail" oninput="validateContactFields()" />
+        <small id="emailError" style="color: red; display: none;">Enter a valid email address.</small>
+
+        <label for="city" class="form-label"><strong>Locations <span style="color: red">*</span></strong></label>
+        <select id="city" multiple style="height: 160px;">
+          <option value="Madurai">Madurai</option>
+          <option value="Rameshwaram">Rameshwaram</option>
+          <option value="Kodaikanal">Kodaikanal</option>
+          <option value="Mahabalipuram">Mahabalipuram</option>
+          <option value="Kanyakumari">Kanyakumari</option>
+          <option value="Ooty">Ooty</option>
+          <option value="Munnar">Munnar</option>
+          <option value="Trichy">Trichy</option>
+          <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+          <option value="Thanjavur">Thanjavur</option>
+          <option value="Kumbakonam">Kumbakonam</option>
+          <option value="Thiruvanamalai">Thiruvanamalai</option>
+          <option value="Pondicherry">Pondicherry</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Tirupathi">Tirupathi</option>
+          <option value="Mysore">Mysore</option>
+          <option value="Bangalore">Bangalore</option>
+        </select>
+      </div>
+    </div>
+    <!-- Two Column Layout End -->
+
+    <!-- Next Step Button -->
+   <div class="button-fixed">
+  <button id="nextBtn1" onclick="nextStep()" disabled>Next Step</button>
+</div>
+  </div>
+
+
+
+  <div class="step">
+  <h3>How Many Adults and Children?</h3>
+  <p>Please tell us how many adults and children will be traveling.</p>
+
+  <div class="form-two-cols">
+    <div class="form-group">
+      <label for="adults">Adults <span style="color: red">*</span></label>
+      <input type="number" id="adults" placeholder="0" min="0" />
+    </div>
+
+    <div class="form-group">
+      <label for="children">Children</label>
+      <input type="number" id="children" placeholder="0" min="0" />
+    </div>
+  </div>
+
+  <div class="button-fixed">
+    <button onclick="prevStep()">Back</button>
+    <button id="nextBtn2" onclick="nextStep()" disabled>Next Step</button>
+  </div>
+</div>
+
+
+
+
+
+
+     <div class="step">
+  <h3>Date of Journey & Hotels</h3>
+  <p>Please select your start and end date of journey and Hotels.</p>
+
+ <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+  <!-- Left Column -->
+  <div style="flex: 1; min-width: 250px;">
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 5px;"><strong>Start Date <span style="color: red">*</span></strong></label>
+      <input type="date" id="startDate" style="width: 100%; padding: 8px;" />
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 5px;"><strong>End Date <span style="color: red">*</span></strong></label>
+      <input type="date" id="endDate" style="width: 100%; padding: 8px;" />
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div style="flex: 1; min-width: 250px;">
+   <div style="margin-bottom: 20px;">
+  <label style="display: block; margin-bottom: 5px;"><strong>Select Hotel <span style="color: red">*</span></strong></label>
+  <select id="package" style="width: 100%; padding: 8px;">
+    <option value="" disabled selected>Select a Hotel</option>
+    <option>Standard Package (Standard Hotels)</option>
+    <option>Deluxe Package (3 Star Deluxe Hotels)</option>
+    <option>Super Deluxe Package (3 Star Premium Hotels)</option>
+    <option>Premium Package (4 Star Hotels)</option>
+    <option>Luxury Package (4 and 5 Star Hotels)</option>
+  </select>
+</div>
+
+
+   <div style="margin-bottom: 20px;">
+  <label for="plan" style="display: block; margin-bottom: 5px;">
+    <strong>Purpose of Visit <span style="color: red">*</span></strong>
+  </label>
+  <input
+    type="text"
+    id="plan"
+    placeholder="Enter your purpose of visit"
+    style="width: 100%; padding: 8px;"
+  />
+</div>
+
+  </div>
+</div>
+
+
+<div class="button-fixed">
+  <button onclick="prevStep()">Back</button>
+  <button id="submitBtn" onclick="submitForm()" disabled>Submit</button>
+</div>
+</div>
+
+
+
+
+<div class="step">
+  <video width="100%" autoplay muted loop playsinline>
+    <source src="img/kavi.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+</div>
+
+
+
+      
+
+
+
+    
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+      <div class="text-center">
+      <h6 class="section-title bg-white text-center text-primary px-3">
+        Discover Your Next Adventure
+      </h6>
+      <h1 class="mb-5">The World's Premier Safari Destinations</h1>
+    </div>
     <!-- Destination Start -->
-    <div class="container-xxl py-5 destination">
-      <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="section-title bg-white text-center text-primary px-3">
-            Destination
-          </h6>
-          <h1 class="mb-5">Popular Destination</h1>
+
+<div class="container-fluid py-5 destination">
+  <div class="container">
+    <div class="scroll-wrapper">
+      <!-- Left Button -->
+     <button class="slider-btn left" id="leftBtn">‹</button>
+
+      <div class="scroll-container">
+        <div class="scroll-row" id="cardSlider">
+          <!-- Cards -->
+         <div class="destination-item flip-card">
+  <div class="flip-card-inner">
+    <!-- Front Side -->
+    <div class="flip-card-front">
+      <img class="img-fluid w-100" src="img/tamilnadu.png" alt="Kenya" />
+      <div class="destination-overlay text-white text-center p-4">
+        <h5 class="text-white">Tamil Nadu</h5>
+<p>The Land of Ancient Heritage</p>
+      </div>
+    </div>
+
+    <!-- Back Side -->
+   <!-- Flip Card Back -->
+<div class="flip-card-back d-flex flex-column text-white text-center p-0 position-relative">
+  <!-- Background Image -->
+  <img src="img/tamilnadu.png" alt="Tamil Nadu" class="bg-img" />
+
+  <!-- Overlay Layer -->
+  <div class="bg-overlay"></div>
+
+  <!-- Content on Top -->
+  <div class="content position-relative px-3 py-2 w-100">
+  <div class="district-scroll">
+    <div class="district-list w-100">
+  <a href="https://www.maduraikavitravels.com/madurai.html" class="district-box">Madurai</a>
+  <a href="https://www.maduraikavitravels.com/rameshwaram.html" class="district-box">Rameshwaram</a>
+  <a href="https://www.maduraikavitravels.com/kodaikanal.html" class="district-box">Kodaikanal</a>
+  <a href="https://www.maduraikavitravels.com/mahabalipuram.html" class="district-box">Mahabalipuram</a>
+  <a href="https://www.maduraikavitravels.com/kanyakumari.html" class="district-box">Kanyakumari</a>
+  <a href="https://www.maduraikavitravels.com/ooty.html" class="district-box">Ooty</a>
+  <a href="https://www.maduraikavitravels.com/trichy.html" class="district-box">Trichy</a>
+  <a href="https://www.maduraikavitravels.com/thanjavur.html" class="district-box">Thanjavur</a>
+  <a href="https://www.maduraikavitravels.com/kumbakonam.html" class="district-box">Kumbakonam</a>
+  <a href="https://www.maduraikavitravels.com/thiruvannamalai.html" class="district-box">Thiruvannamalai</a>
+  <a href="https://www.maduraikavitravels.com/pondicherry.html" class="district-box">Pondicherry</a>
+  <a href="https://www.maduraikavitravels.com/chennai.html" class="district-box">Chennai</a>
+</div>
+
+  </div>
+</div>
+
+</div>
+
+
+
+  </div>
+</div>
+
+
+    <div class="destination-item flip-card">
+  <div class="flip-card-inner">
+    <!-- Front Side -->
+    <div class="flip-card-front">
+      <img class="img-fluid w-100" src="img/kerala.png" alt="Kenya" />
+      <div class="destination-overlay text-white text-center p-4">
+      <h5 class="text-white">Kerala</h5>
+<p>The Land of Serenity</p>
+
+      </div>
+    </div>
+
+    <!-- Back Side -->
+   <div class="flip-card-back d-flex flex-column text-white text-center p-0 position-relative">
+  <!-- Background Image -->
+  <img src="img/kerala.png" alt="Tamil Nadu" class="bg-img" />
+
+  <!-- Overlay Layer -->
+  <div class="bg-overlay"></div>
+
+  <!-- Content on Top -->
+  <div class="content position-relative px-3 py-2 w-100">
+  <div class="district-scroll">
+    <div class="district-list w-100">
+      <a href="https://www.maduraikavitravels.com/munnar.html" class="district-box">Munnar</a>
+      <a href="https://www.maduraikavitravels.com/thiruvananthapuram.html" class="district-box">Thiruvananthapuram</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="destination-item flip-card">
+  <div class="flip-card-inner">
+    <!-- Front Side -->
+    <div class="flip-card-front">
+      <img class="img-fluid w-100" src="img/karnataka.png" alt="Kenya" />
+      <div class="destination-overlay text-white text-center p-4">
+       <h5 class="text-white">Karnataka</h5>
+<p>The Land of Splendor</p>
+      </div>
+    </div>
+
+    <!-- Flip Card Back -->
+<div class="flip-card-back d-flex flex-column text-white text-center p-0 position-relative">
+  <!-- Background Image -->
+  <img src="img/karnataka.png" alt="Tamil Nadu" class="bg-img" />
+
+  <!-- Overlay Layer -->
+  <div class="bg-overlay"></div>
+
+  <!-- Content on Top -->
+  <div class="content position-relative px-3 py-2 w-100">
+  <div class="district-scroll">
+    <div class="district-list w-100">
+     <a href="https://www.maduraikavitravels.com/mysore.html" class="district-box">Mysore</a>
+<a href="https://www.maduraikavitravels.com/bangalore.html" class="district-box">Bangalore</a>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+
+
+              <div class="destination-item flip-card">
+  <div class="flip-card-inner">
+    <!-- Front Side -->
+    <div class="flip-card-front">
+      <img class="img-fluid w-100" src="img/andhra.jpg" alt="Kenya" />
+      <div class="destination-overlay text-white text-center p-4">
+        <h5 class="text-white">Andhra Pradesh</h5>
+<p>The Land of Temples and Natural Beauty</p>
+
+      </div>
+    </div>
+
+       <!-- Flip Card Back -->
+<div class="flip-card-back d-flex flex-column text-white text-center p-0 position-relative">
+  <!-- Background Image -->
+  <img src="img/andhra.jpg" alt="Tamil Nadu" class="bg-img" />
+
+  <!-- Overlay Layer -->
+  <div class="bg-overlay"></div>
+
+  <!-- Content on Top -->
+  <div class="content position-relative px-3 py-2 w-100">
+  <div class="district-scroll">
+    <div class="district-list w-100">
+    <a href="https://www.maduraikavitravels.com/tirupathi.html" class="district-box">Tirupathi</a>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
         </div>
-        <div class="row g-4">
+      </div>
+
+      <!-- Right Button -->
+      <button class="slider-btn right" id="rightBtn">›</button>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="district.html" class="btn btn-warning fw-bold">Discover More Destinations →</a>
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- <div class="row g-4"> -->
           <!-- Destination Cards -->
-          <div class="col-md-2 col-sm-3 col-6">
+          <!-- <div class="col-md-2 col-sm-3 col-6">
             <a href="madurai.html" class="destination-card">
               <div class="card">
                 <img
@@ -478,9 +920,7 @@
               </div>
             </a>
           </div>
-        </div>
-      </div>
-    </div>
+        </div> -->
     <!-- Destination Start -->
 
     <!-- Package Start -->
@@ -672,278 +1112,24 @@
     </div>
     <!-- Package End -->
 
+    
+
     <!-- Team Start -->
-    <div class="container-xxl py-5">
-      <!-- SUV Vehicles -->
-      <div class="container mt-5">
-        <div class="text-center fadeInUp" data-wow-delay="0.1s">
-          <h1 class="mb-5">See Our SUV Vehicles</h1>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/innova-hycross.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Innova Hycross</h5>
-                <small>7+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/InnovaCrista-best-madurai-travels.jpg"
-                  alt=""
-                />
-              </div>
+  <!-- Your content here -->
+<div class="fullscreen-bg text-white">
+  <div class="car-wrapper d-flex align-items-center justify-content-center gap-4">
+    <button class="arrow-btn" onclick="scrollCars(-1)">❮</button>
 
-              <div class="text-center p-4">
-                <h5 class="mb-0">Innova Crysta</h5>
-                <small>7+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/innova.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Innova</h5>
-                <small>6+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Ertica-best-madurai-travels.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Ertica</h5>
-                <small>6+1</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/KiaCarens-best-madurai-travels.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">KiaCarens</h5>
-                <small>6+1</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Sedan  Vehicles -->
-      <div class="container mt-5">
-        <div class="text-center fadeInUp" data-wow-delay="0.1s">
-          <h1 class="mb-5">See Our Sedan Vehicles</h1>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Urban-Cruiser-Taisor.png"
-                  alt="Urban-Cruiser-Taisor"
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Urban Cruiser Taisor</h5>
-                <small>4+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Etiosbest-madurai-travels.png"
-                  alt="Etios-best-madurai-travels"
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Etios</h5>
-                <small>4+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Glanzabest-madurai-travels.jpg"
-                  alt="Glanza"
-                />
-              </div>
-
-              <div class="text-center p-4">
-                <h5 class="mb-0">Glanza</h5>
-                <small>4+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Ciazbest-madurai-travels.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Ciaz</h5>
-                <small>4+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Swift-Dzire-Toursbest-madurai-travels.png"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Swift Dzire Tours</h5>
-                <small>4+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Tata-Zestbest-madurai-travels.jpg"
-                  alt="Tata-Zest"
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Tata Zest</h5>
-                <small>4+1</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Tempo, Van and Bus  Vehicles -->
-      <div class="container mt-5">
-        <div class="text-center fadeInUp" data-wow-delay="0.1s">
-          <h1 class="mb-5">Tempo, Van and Bus</h1>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/force-car-bestmaduraitravel.png"
-                  alt="force-best-madurai-travels"
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Force</h5>
-                <small>14+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Tourister-best-madurai-travels.jpg"
-                  alt="Tourister-best-madurai-travels"
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Tourister</h5>
-                <small>21+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Mini-Bus-best-madurai-travels.png"
-                  alt="Mini-Bus-best-madurai-travels"
-                />
-              </div>
-
-              <div class="text-center p-4">
-                <h5 class="mb-0">Mini Bus</h5>
-                <small>18+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Bus-36+1-best-madurai-travels.png"
-                  alt="Bus-36+1"
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Bus</h5>
-                <small>36+1</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item">
-              <div class="overflow-hidden">
-                <img
-                  class="img-fluid"
-                  src="img/KaviAssets/cars/Bus-54+1-best-madurai-travels.png"
-                  alt=""
-                />
-              </div>
-              <div class="text-center p-4">
-                <h5 class="mb-0">Bus</h5>
-                <small>54+1</small>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="car-slider">
+      <div class="car-card-container" id="carCardContainer">
+        <!-- Card content injected dynamically -->
       </div>
     </div>
-    <!-- Team End -->
+
+    <button class="arrow-btn" onclick="scrollCars(1)">❯</button>
+  </div>
+</div>
+
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
@@ -1326,5 +1512,219 @@
         }
       }
     </script>
+ <script>
+  let currentStep = 0;
+
+  function showStep(stepIndex) {
+    const steps = document.querySelectorAll(".step");
+    const indicators = document.querySelectorAll(".step-indicator");
+
+    steps.forEach((step, idx) => {
+      step.classList.toggle("active", idx === stepIndex);
+    });
+
+    indicators.forEach((indicator, idx) => {
+      indicator.classList.toggle("active", idx === stepIndex);
+    });
+
+    currentStep = stepIndex;
+    validateStep();
+  }
+
+  function nextStep() {
+    if (validateStep()) {
+      showStep(currentStep + 1);
+    }
+  }
+
+  function prevStep() {
+    showStep(currentStep - 1);
+  }
+
+  function submitForm() {
+    const formData = new FormData();
+    formData.append("fullName", document.getElementById("name").value);
+    formData.append("phone", document.getElementById("phone").value);
+    formData.append("email", document.getElementById("email").value);
+    formData.append("city", document.getElementById("city").value);
+    formData.append("adults", document.getElementById("adults").value);
+    formData.append("children", document.getElementById("children").value);
+    formData.append("startDate", document.getElementById("startDate").value);
+    formData.append("endDate", document.getElementById("endDate").value);
+    formData.append("package", document.getElementById("package").value);
+    formData.append("plan", document.getElementById("plan").value);
+
+    fetch("https://script.google.com/macros/s/AKfycbzKgNUj98uQ_bK85Hn_8IfHTHR4ahQkwmOM_Kc-NwlcMKT3vVOKsN_zidJ1RWJ6qyfi/exec", {
+      method: "POST",
+      body: formData
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          showStep(3);
+          setTimeout(() => {
+            window.location.href = "https://www.maduraikavitravels.com/";
+          }, 2500);
+        } else {
+          alert("Error: " + result.error);
+        }
+        resetFormFields();
+      })
+      .catch(err => {
+        console.error("Submission error:", err);
+        alert("Something went wrong!");
+      });
+  }
+
+  function resetFormFields() {
+    const fields = ["name", "phone", "email", "city", "adults", "children", "startDate", "endDate", "package", "plan"];
+    fields.forEach(id => document.getElementById(id).value = "");
+
+    const btns = document.querySelectorAll("button[id^='nextBtn'], #submitBtn");
+    btns.forEach(btn => {
+      btn.disabled = true;
+      btn.classList.remove("enabled");
+    });
+  }
+
+  function validateStep() {
+    let isValid = false;
+
+    if (currentStep === 0) {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const city = document.getElementById("city").value.trim();
+      isValid = name && phone && email && city;
+      toggleButton("Next", isValid);
+    }
+
+    if (currentStep === 1) {
+      const adults = document.getElementById("adults").value.trim();
+      isValid = (adults !== "" && !isNaN(adults));
+      toggleButton("Next", isValid);
+    }
+
+    if (currentStep === 2) {
+      const start = document.getElementById("startDate").value;
+      const end = document.getElementById("endDate").value;
+      const pack = document.getElementById("package").value;
+      const plan = document.getElementById("plan").value.trim();
+      isValid = start && end && pack && plan;
+      toggleButton("Submit", isValid);
+    }
+
+    return isValid;
+  }
+
+  function toggleButton(type, enable) {
+    let btn;
+    if (type === "Next") {
+      btn = document.querySelectorAll(".step")[currentStep].querySelector('button[onclick="nextStep()"]');
+    } else if (type === "Submit") {
+      btn = document.querySelectorAll(".step")[currentStep].querySelector('button[onclick="submitForm()"]');
+    }
+
+    if (btn) {
+      btn.disabled = !enable;
+      btn.classList.toggle("enabled", enable);
+    }
+  }
+
+  function openPopup() {
+    document.getElementById("popupForm").style.display = "flex";
+    showStep(0);
+  }
+
+  function closePopup() {
+    document.getElementById("popupForm").style.display = "none";
+  }
+
+  function closeOfferAndOpenForm(event) {
+    event.preventDefault();
+    const modalEl = document.getElementById("offerPopup");
+    const bsModal = bootstrap.Modal.getInstance(modalEl);
+    if (bsModal) bsModal.hide();
+    openPopup();
+  }
+
+  document.addEventListener("input", validateStep);
+</script>
+
+<script>
+  const startDateInput = document.getElementById("startDate");
+  const endDateInput = document.getElementById("endDate");
+
+  // Set current date as default for start date
+  const today = new Date();
+  const formattedToday = today.toISOString().split("T")[0];
+  startDateInput.value = formattedToday;
+  startDateInput.min = formattedToday;
+
+  // Set default end date to next day
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  endDateInput.value = tomorrow.toISOString().split("T")[0];
+  endDateInput.min = endDateInput.value;
+
+  // Auto-update end date when start date changes
+  startDateInput.addEventListener("change", () => {
+    const selectedDate = new Date(startDateInput.value);
+    selectedDate.setDate(selectedDate.getDate() + 1);
+    const nextDay = selectedDate.toISOString().split("T")[0];
+    endDateInput.value = nextDay;
+    endDateInput.min = nextDay;
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+  const citySelect = new Choices('#city', {
+    removeItemButton: true,
+    placeholderValue: 'Locations',
+    searchPlaceholderValue: 'Search city',
+    shouldSort: false,
+  });
+
+  // Auto-close dropdown after selecting one item
+  citySelect.passedElement.element.addEventListener('change', () => {
+    citySelect.hideDropdown();
+  });
+
+  // Custom close icon
+  function createCloseSVG() {
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "1.5");
+    svg.setAttribute("width", "18");
+    svg.setAttribute("height", "18");
+
+    const path = document.createElementNS(svgNS, "path");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    path.setAttribute("d", "M6 18L18 6M6 6l12 12");
+    svg.appendChild(path);
+
+    return svg;
+  }
+
+  // Replace remove buttons with custom SVG
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('.choices__button').forEach(button => {
+      if (!button.classList.contains('customized')) {
+        button.classList.add('customized');
+        button.textContent = '';
+        button.appendChild(createCloseSVG());
+      }
+    });
+  });
+
+  observer.observe(document.querySelector('.choices__list--multiple'), {
+    childList: true,
+    subtree: true
+  });
+</script>
   </body>
 </html>

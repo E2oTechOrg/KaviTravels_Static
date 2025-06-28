@@ -4,8 +4,9 @@
   // Spinner
   var spinner = function () {
     setTimeout(function () {
-      if ($("#spinner").length > 0) {
-        $("#spinner").removeClass("show");
+      const spinnerEl = document.getElementById("spinner");
+      if (spinnerEl) {
+        spinnerEl.classList.remove("show");
       }
     }, 1);
   };
@@ -58,9 +59,235 @@
       $(".back-to-top").fadeOut("slow");
     }
   });
+
   $(".back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
+  });
+
+
+
+
+  // model popup for lead form
+
+
+  
+
+
+ const carCards = [
+      {
+        name: "Innova Hycross",
+        price: "$187,400*",
+        image: "img/innova-hycrosss.png",
+        range: "357 KM",
+        power: "7+1 hp",
+        speed: "2.6 s"
+      },
+      {
+        name: "Innova Crysta",
+        price: "$134,100*",
+        image: "img/KaviAssets/cars/InnovaCrista-best-madurai-travels.png",
+        range: "420 KM",
+        power: "7+1 hp",
+        speed: "3.7 s"
+      },
+      {
+        name: "Innova",
+        price: "$106,500*",
+        image: "img/KaviAssets/cars/innova.png",
+        range: "6+1 KM",
+        power: "522 hp",
+        speed: "4.0 s"
+      },
+      {
+        name: "Ertica",
+        price: "$187,400*",
+        image: "img/KaviAssets/cars/Ertica-best-madurai-travels.png",
+        range: "357 KM",
+        power: "6+1 hp",
+        speed: "2.6 s"
+      },
+      {
+        name: "KiaCarens",
+        price: "$134,100*",
+        image: "img/KaviAssets/cars/KiaCarens-best-madurai-travels.png",
+        range: "420 KM",
+        power: "598 hp",
+        speed: "3.7 s"
+      },
+      {
+        name: "Urban Cruiser Taisor",
+        price: "$106,500*",
+        image: "img/KaviAssets/cars/Urban-Cruiser-Taisor.png",
+        range: "365 KM",
+        power: "4+1 hp",
+        speed: "4.0 s"
+      },
+      {
+        name: "Etios",
+        price: "$187,400*",
+        image: "img/KaviAssets/cars/Etiosbest-madurai-travels.png",
+        range: "357 KM",
+        power: "4+1 hp",
+        speed: "2.6 s"
+      },
+      {
+        name: "Glanza",
+        price: "$134,100*",
+        image: "img/KaviAssets/cars/Glanzabest-madurai-travels.png",
+        range: "420 KM",
+        power: "4+1 hp",
+        speed: "3.7 s"
+      },
+      {
+        name: "Ciaz",
+        price: "$106,500*",
+        image: "img/KaviAssets/cars/Ciazbest-madurai-travels.png",
+        range: "365 KM",
+        power: "4+1 hp",
+        speed: "4.0 s"
+      },
+      {
+        name: "Swift Dzire Tours",
+        price: "$187,400*",
+        image: "img/KaviAssets/cars/Swift-Dzire-Toursbest-madurai-travels.png",
+        range: "357 KM",
+        power: "4+1 hp",
+        speed: "2.6 s"
+      },
+      {
+        name: "Tata Zest",
+        price: "$134,100*",
+        image: "img/KaviAssets/cars/Tata-Zestbest-madurai-travels.png",
+        range: "420 KM",
+        power: "4+1 hp",
+        speed: "3.7 s"
+      },
+      {
+        name: "Force",
+        price: "$106,500*",
+        image: "img/KaviAssets/cars/force-car-bestmaduraitravel.png",
+        range: "365 KM",
+        power: "14+1 hp",
+        speed: "4.0 s"
+      },
+      {
+        name: "Tourister",
+        price: "$187,400*",
+        image: "img/KaviAssets/cars/Tourister-best-madurai-travels.png",
+        range: "357 KM",
+        power: "21+1 hp",
+        speed: "2.6 s"
+      },
+      {
+        name: "Mini Bus",
+        price: "$134,100*",
+        image: "img/KaviAssets/cars/Mini-Bus-best-madurai-travels.png",
+        range: "420 KM",
+        power: "18+1 hp",
+        speed: "3.7 s"
+      },
+      {
+        name: "Bus",
+        price: "$106,500*",
+        image: "img/KaviAssets/cars/Bus-36+1-best-madurai-travels.png",
+        range: "365 KM",
+        power: "36+1 hp",
+        speed: "4.0 s"
+      },
+      {
+        name: "Bus",
+        price: "$106,500*",
+        image: "img/KaviAssets/cars/Bus-54+1-best-madurai-travels.png",
+        range: "365 KM",
+        power: "54+1 hp",
+        speed: "4.0 s"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function renderCard(index) {
+      const car = carCards[index];
+      const cardHTML = `
+        <div class="car-card">
+          <div class="car-title">
+            <h1 class="text-white">${car.name}</h1>
+            <p>From ${car.price}</p>
+          </div>
+          <img class="car-image" src="${car.image}" alt="${car.name}">
+          <div class="car-metrics">
+            <div class="metric">
+              <h4 class="text-dark">${car.range}</h4>
+              <p>Driving Range</p>
+            </div>
+            <div class="metric">
+              <h4 class="text-dark">${car.power}</h4>
+              <p>Overboost Power with Launch Control</p>
+            </div>
+            <div class="metric">
+              <h4 class="text-dark">${car.speed}</h4>
+              <p>0 - 100 km/h with Launch Control</p>
+            </div>
+          </div>
+        </div>`;
+      document.getElementById("carCardContainer").innerHTML = cardHTML;
+    }
+
+   window.scrollCars = function(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = carCards.length - 1;
+  if (currentIndex >= carCards.length) currentIndex = 0;
+  renderCard(currentIndex);
+};
+
+    // Run after DOM is loaded
+    window.onload = function () {
+      renderCard(currentIndex);
+      setInterval(() => scrollCars(1), 5000); // Scroll every 5 seconds
+    };
+ document.addEventListener("DOMContentLoaded", () => {
+    // Slider
+    const row = document.getElementById("cardSlider");
+    const leftBtn = document.getElementById("leftBtn");
+    const rightBtn = document.getElementById("rightBtn");
+
+    let currentScroll = 0;
+
+    function getCardScrollDistance() {
+      if (!row) return 0;
+      const card = row.querySelector(".destination-item");
+      if (!card) return 0;
+      const style = window.getComputedStyle(card);
+      const marginRight = parseInt(style.marginRight) || 20;
+      return card.offsetWidth + marginRight;
+    }
+
+    if (rightBtn && row) {
+      rightBtn.addEventListener("click", () => {
+        const distance = getCardScrollDistance();
+        const maxScroll = row.scrollWidth - row.clientWidth;
+        currentScroll = Math.min(currentScroll + distance, maxScroll);
+        row.style.transform = `translateX(-${currentScroll}px)`;
+      });
+    }
+
+    if (leftBtn && row) {
+      leftBtn.addEventListener("click", () => {
+        const distance = getCardScrollDistance();
+        currentScroll = Math.max(currentScroll - distance, 0);
+        row.style.transform = `translateX(-${currentScroll}px)`;
+      });
+    }
+
+    // Show modal after delay
+    const offerPopup = document.getElementById("offerPopup");
+    if (offerPopup) {
+      setTimeout(() => {
+        const offerModal = new bootstrap.Modal(offerPopup);
+        offerModal.show();
+      }, 7000);
+    }
   });
 
   // Testimonials carousel

@@ -278,12 +278,12 @@
     </div>
     -->
 
-    <div class="overlay" id="overlay">
-      <span class="close" onclick="closeOverlay()">&times;</span>
-      <span class="prev" onclick="prevImage()">&#10094;</span>
-      <img id="fullImage" src="" alt="Full View" />
-      <span class="next" onclick="nextImage()">&#10095;</span>
-    </div>
+   <div class="overlay" id="overlay">
+  <span class="close" onclick="closeOverlay()">&times;</span>
+  <span class="prev" onclick="prevImage()">&#10094;</span>
+  <img id="fullImage" src="" alt="Full View" />
+  <span class="next" onclick="nextImage()">&#10095;</span>
+</div>
 
     <div class="container mt-4">
       <h2 class="text-center">Gallery</h2>
@@ -317,104 +317,88 @@
       </nav>
     </div>
 
-    <script>
-      $(document).ready(function () {
-        const totalImages = 85;
-        const imagesPerPage = 20;
-        let currentPage = 1;
+ <script>
+  $(document).ready(function () {
+    const totalImages = 85;
+    const imagesPerPage = 20;
+    let currentPage = 1;
+    let currentIndex = 0;
+    let loadedImages = [];
 
-        function loadImages(page) {
-          $("#imageGallery").empty();
-          const startIndex = (page - 1) * imagesPerPage + 1;
-          const endIndex = Math.min(
-            startIndex + imagesPerPage - 1,
-            totalImages
-          );
+    function loadImages(page) {
+      $("#imageGallery").empty();
+      loadedImages = [];
+      const startIndex = (page - 1) * imagesPerPage + 1;
+      const endIndex = Math.min(startIndex + imagesPerPage - 1, totalImages);
 
-          for (let i = startIndex; i <= endIndex; i++) {
-            const imgElement = `
-                                    <img class="lazyload" 
-                                         data-src="img/gallery/best-travels-madurai-kavi-travels-feedback-${i}.jpg.jpeg" 
-                                         alt="Best Travels in Madurai - Kavi Travels Customer Feedback">
-                                  `;
-            $("#imageGallery").append(imgElement);
-          }
-        }
+      for (let i = startIndex; i <= endIndex; i++) {
+        const src = `img/gallery/best-travels-madurai-kavi-travels-feedback-${i}.jpg.jpeg`;
+        const imgElement = $(`<img class="lazyload gallery-img" data-src="${src}" src="${src}" alt="Feedback ${i}" data-index="${i - startIndex}">`);
+        $("#imageGallery").append(imgElement);
+        loadedImages.push(src);
+      }
 
-        function updatePagination() {
-          $(".page-number").removeClass("active");
-          $(".page-number[data-page='" + currentPage + "']").addClass("active");
+      $(".gallery-img").on("click", function () {
+        currentIndex = parseInt($(this).attr("data-index"));
+        $("#fullImage").attr("src", loadedImages[currentIndex]);
+        $("#overlay").css("display", "flex");
+      });
+    }
 
-          $("#prevPage").toggleClass("disabled", currentPage === 1);
-          $("#nextPage").toggleClass(
-            "disabled",
-            currentPage * imagesPerPage >= totalImages
-          );
-        }
+    function updatePagination() {
+      $(".page-number").removeClass("active");
+      $(".page-number[data-page='" + currentPage + "']").addClass("active");
 
-        $(".page-number").on("click", function (e) {
-          e.preventDefault();
-          currentPage = parseInt($(this).attr("data-page"));
-          loadImages(currentPage);
-          updatePagination();
-        });
+      $("#prevPage").toggleClass("disabled", currentPage === 1);
+      $("#nextPage").toggleClass("disabled", currentPage * imagesPerPage >= totalImages);
+    }
 
-        $("#prevPage").on("click", function (e) {
-          e.preventDefault();
-          if (currentPage > 1) {
-            currentPage--;
-            loadImages(currentPage);
-            updatePagination();
-          }
-        });
+    $(".page-number").on("click", function (e) {
+      e.preventDefault();
+      currentPage = parseInt($(this).attr("data-page"));
+      loadImages(currentPage);
+      updatePagination();
+    });
 
-        $("#nextPage").on("click", function (e) {
-          e.preventDefault();
-          if (currentPage * imagesPerPage < totalImages) {
-            currentPage++;
-            loadImages(currentPage);
-            updatePagination();
-          }
-        });
-
-        // Initial Load
+    $("#prevPage").on("click", function (e) {
+      e.preventDefault();
+      if (currentPage > 1) {
+        currentPage--;
         loadImages(currentPage);
         updatePagination();
-      });
-    </script>
-
-    <script>
-      let currentIndex = 0;
-      const images = document.querySelectorAll(".gallery img");
-      const overlay = document.getElementById("overlay");
-      const fullImage = document.getElementById("fullImage");
-
-      images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-          currentIndex = index;
-          showImage();
-        });
-      });
-
-      function showImage() {
-        fullImage.src = images[currentIndex].src;
-        overlay.style.display = "flex";
       }
+    });
 
-      function closeOverlay() {
-        overlay.style.display = "none";
+    $("#nextPage").on("click", function (e) {
+      e.preventDefault();
+      if (currentPage * imagesPerPage < totalImages) {
+        currentPage++;
+        loadImages(currentPage);
+        updatePagination();
       }
+    });
 
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage();
-      }
+    // Popup Functions
+    window.closeOverlay = function () {
+      $("#overlay").hide();
+    };
 
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage();
-      }
-    </script>
+    window.prevImage = function () {
+      currentIndex = (currentIndex - 1 + loadedImages.length) % loadedImages.length;
+      $("#fullImage").attr("src", loadedImages[currentIndex]);
+    };
+
+    window.nextImage = function () {
+      currentIndex = (currentIndex + 1) % loadedImages.length;
+      $("#fullImage").attr("src", loadedImages[currentIndex]);
+    };
+
+    // Initial Load
+    loadImages(currentPage);
+    updatePagination();
+  });
+</script>
+
 
     <!-- Footer Start -->
     <div id="footer-container"></div>
