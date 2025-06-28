@@ -77,7 +77,7 @@
 .choices[data-type*=select-multiple] .choices__button::after,
 .choices[data-type*=text] .choices__button::after {
   content: '';
-  display: block;
+  display: grid;
   width: 16px;
   height: 16px;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 6L6 18' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M6 6L18 18' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -88,6 +88,27 @@
 
 .choices[data-type*=select-multiple] .choices__button:hover::after {
   filter: brightness(0.5);
+}
+.choices[data-type*="select-multiple"] .choices__button,
+.choices[data-type*="text"] .choices__button {
+  position: relative !important;
+  display: inline-block !important; /* Overriding table-row */
+  margin: 0 4px 0 8px !important;
+  padding-left: 0 !important;
+  border: none !important; /* Remove border */
+  background-image: none !important; /* Remove default icon */
+  background-size: 0 !important;
+  width: auto !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
+  color: #000 !important;
+  cursor: pointer !important;
+}
+
+.choices[data-type*="select-multiple"] .choices__button:hover {
+  color: red !important;
 }
 
 
