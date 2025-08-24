@@ -111,6 +111,14 @@
   color: red !important;
 }
 
+.form-row input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
 
 /* Wrapper */
 .popup-wrapper {
@@ -948,6 +956,10 @@ button.enabled:hover {
 }
 
 /*** Spinner ***/
+
+
+
+
 #spinner {
   opacity: 0;
   visibility: hidden;

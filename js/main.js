@@ -75,133 +75,134 @@
 
 
  const carCards = [
+     
+      // {
+      //   name: "Innova Crysta",
+      //   price: "$134,100*",
+      //   image: "img/KaviAssets/cars/InnovaCrista-best-madurai-travels.png",
+      //   range: "420 KM",
+      //   power: "7+1 hp",
+      //   speed: "3.7 s"
+      // },
+      // {
+      //   name: "Innova",
+      //   price: "$106,500*",
+      //   image: "img/KaviAssets/cars/innova.png",
+      //   range: "6+1 KM",
+      //   power: "522 hp",
+      //   speed: "4.0 s"
+      // },
       {
-        name: "Innova Hycross",
-        price: "$187,400*",
-        image: "img/innova-hycrosss.png",
-        range: "357 KM",
-        power: "7+1 hp",
-        speed: "2.6 s"
-      },
-      {
-        name: "Innova Crysta",
-        price: "$134,100*",
-        image: "img/KaviAssets/cars/InnovaCrista-best-madurai-travels.png",
-        range: "420 KM",
-        power: "7+1 hp",
-        speed: "3.7 s"
-      },
-      {
-        name: "Innova",
-        price: "$106,500*",
-        image: "img/KaviAssets/cars/innova.png",
-        range: "6+1 KM",
-        power: "522 hp",
-        speed: "4.0 s"
-      },
-      {
-        name: "Ertica",
-        price: "$187,400*",
+        name: "Sedan",
+        // price: "$187,400*",
         image: "img/KaviAssets/cars/Ertica-best-madurai-travels.png",
-        range: "357 KM",
-        power: "6+1 hp",
-        speed: "2.6 s"
+        range: "300 KM/ day",
+        power: "4+1 Seats",
+        // speed: "2.6 s"
       },
-      {
-        name: "KiaCarens",
-        price: "$134,100*",
-        image: "img/KaviAssets/cars/KiaCarens-best-madurai-travels.png",
-        range: "420 KM",
-        power: "598 hp",
-        speed: "3.7 s"
+       {
+        name: "SUV",
+        // price: "$187,400*",
+        image: "img/innova-hycrosss.png",
+        range: "300 KM/ day",
+        power: "7+1 Seats",
+        // speed: "2.6 s"
       },
+      // {
+      //   name: "KiaCarens",
+      //   price: "$134,100*",
+      //   image: "img/KaviAssets/cars/KiaCarens-best-madurai-travels.png",
+      //   range: "420 KM",
+      //   power: "598 hp",
+      //   speed: "3.7 s"
+      // },
+      // {
+      //   name: "Urban Cruiser Taisor",
+      //   price: "$106,500*",
+      //   image: "img/KaviAssets/cars/Urban-Cruiser-Taisor.png",
+      //   range: "365 KM",
+      //   power: "4+1 hp",
+      //   speed: "4.0 s"
+      // },
+      // {
+      //   name: "Etios",
+      //   price: "$187,400*",
+      //   image: "img/KaviAssets/cars/Etiosbest-madurai-travels.png",
+      //   range: "357 KM",
+      //   power: "4+1 hp",
+      //   speed: "2.6 s"
+      // },
+      // {
+      //   name: "Glanza",
+      //   price: "$134,100*",
+      //   image: "img/KaviAssets/cars/Glanzabest-madurai-travels.png",
+      //   range: "420 KM",
+      //   power: "4+1 hp",
+      //   speed: "3.7 s"
+      // },
+      // {
+      //   name: "Ciaz",
+      //   price: "$106,500*",
+      //   image: "img/KaviAssets/cars/Ciazbest-madurai-travels.png",
+      //   range: "365 KM",
+      //   power: "4+1 hp",
+      //   speed: "4.0 s"
+      // },
+      // {
+      //   name: "Swift Dzire Tours",
+      //   price: "$187,400*",
+      //   image: "img/KaviAssets/cars/Swift-Dzire-Toursbest-madurai-travels.png",
+      //   range: "357 KM",
+      //   power: "4+1 hp",
+      //   speed: "2.6 s"
+      // },
+      // {
+      //   name: "Tata Zest",
+      //   price: "$134,100*",
+      //   image: "img/KaviAssets/cars/Tata-Zestbest-madurai-travels.png",
+      //   range: "420 KM",
+      //   power: "4+1 hp",
+      //   speed: "3.7 s"
+      // },
       {
-        name: "Urban Cruiser Taisor",
-        price: "$106,500*",
-        image: "img/KaviAssets/cars/Urban-Cruiser-Taisor.png",
-        range: "365 KM",
-        power: "4+1 hp",
-        speed: "4.0 s"
-      },
-      {
-        name: "Etios",
-        price: "$187,400*",
-        image: "img/KaviAssets/cars/Etiosbest-madurai-travels.png",
-        range: "357 KM",
-        power: "4+1 hp",
-        speed: "2.6 s"
-      },
-      {
-        name: "Glanza",
-        price: "$134,100*",
-        image: "img/KaviAssets/cars/Glanzabest-madurai-travels.png",
-        range: "420 KM",
-        power: "4+1 hp",
-        speed: "3.7 s"
-      },
-      {
-        name: "Ciaz",
-        price: "$106,500*",
-        image: "img/KaviAssets/cars/Ciazbest-madurai-travels.png",
-        range: "365 KM",
-        power: "4+1 hp",
-        speed: "4.0 s"
-      },
-      {
-        name: "Swift Dzire Tours",
-        price: "$187,400*",
-        image: "img/KaviAssets/cars/Swift-Dzire-Toursbest-madurai-travels.png",
-        range: "357 KM",
-        power: "4+1 hp",
-        speed: "2.6 s"
-      },
-      {
-        name: "Tata Zest",
-        price: "$134,100*",
-        image: "img/KaviAssets/cars/Tata-Zestbest-madurai-travels.png",
-        range: "420 KM",
-        power: "4+1 hp",
-        speed: "3.7 s"
-      },
-      {
-        name: "Force",
-        price: "$106,500*",
+        name: "Tempo",
+        // price: "$106,500*",
         image: "img/KaviAssets/cars/force-car-bestmaduraitravel.png",
-        range: "365 KM",
-        power: "14+1 hp",
-        speed: "4.0 s"
+        range: "250 KM/ day",
+        power: "18, 14, 12+1 Seats",
+        // speed: "4.0 s"
       },
       {
-        name: "Tourister",
-        price: "$187,400*",
+        name: "Coach Van",
+        // price: "$187,400*",
         image: "img/KaviAssets/cars/Tourister-best-madurai-travels.png",
-        range: "357 KM",
-        power: "21+1 hp",
-        speed: "2.6 s"
+        range: "250 KM/ day",
+        power: "24+1 Seats",
+        // speed: "2.6 s"
       },
       {
         name: "Mini Bus",
-        price: "$134,100*",
+        // price: "$134,100*",
         image: "img/KaviAssets/cars/Mini-Bus-best-madurai-travels.png",
-        range: "420 KM",
-        power: "18+1 hp",
-        speed: "3.7 s"
+        range: "250 KM/ day",
+        power: "34+1 Seats",
+        // speed: "3.7 s"
       },
+      // {
+      //   name: "Bus",
+      //   price: "$106,500*",
+      //   image: "img/KaviAssets/cars/Bus-36+1-best-madurai-travels.png",
+      //   range: "365 KM",
+      //   power: "36+1 hp",
+      //   speed: "4.0 s"
+      // },
       {
         name: "Bus",
-        price: "$106,500*",
-        image: "img/KaviAssets/cars/Bus-36+1-best-madurai-travels.png",
-        range: "365 KM",
-        power: "36+1 hp",
-        speed: "4.0 s"
-      },
-      {
-        name: "Bus",
-        price: "$106,500*",
+        // price: "$106,500*",
         image: "img/KaviAssets/cars/Bus-54+1-best-madurai-travels.png",
-        range: "365 KM",
-        power: "54+1 hp",
-        speed: "4.0 s"
+        range: "250 KM/ day",
+        power: "56+1 Seats",
+        // speed: "4.0 s"
       }
     ];
 
@@ -213,7 +214,7 @@
         <div class="car-card">
           <div class="car-title">
             <h1 class="text-white">${car.name}</h1>
-            <p>From ${car.price}</p>
+         
           </div>
           <img class="car-image" src="${car.image}" alt="${car.name}">
           <div class="car-metrics">
@@ -223,12 +224,9 @@
             </div>
             <div class="metric">
               <h4 class="text-dark">${car.power}</h4>
-              <p>Overboost Power with Launch Control</p>
+              <p>Passenger Seats</p>
             </div>
-            <div class="metric">
-              <h4 class="text-dark">${car.speed}</h4>
-              <p>0 - 100 km/h with Launch Control</p>
-            </div>
+           
           </div>
         </div>`;
       document.getElementById("carCardContainer").innerHTML = cardHTML;
